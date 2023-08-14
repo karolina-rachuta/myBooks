@@ -1,6 +1,55 @@
 .container__main {
+  padding: 30px;
+}
+
+.pages {
+  min-height: 100vh;
+  height: 100%;
+  color: $fontColor;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 30px;
+  //align-items: center;
+  padding-top: 150px;
+}
+
+.page__container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  text-align: center;
+}
+
+//
+//.form__box {
+//  display: flex;
+//  flex-direction: column;
+//}
+
+.form__input {
+  height: 40px;
+  width: 300px;
+  @include font-size(18px);
+  color: $fontColor;
+  background-color: $darkPowder;
+  border: none;
+  box-shadow: 1px 1px 5px $fontColor ;
+  padding-left: 10px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $powderPink;
+  opacity: 1; /* Firefox */
+  padding-left: 10px;
+}
+
+.form__btn {
+  height: 40px;
+  width: 100px;
+  @include font-size(18px);
+  background-color: $darkGreen;
+  border: none;
+  box-shadow: 1px 1px 5px $fontColor ;
+  color: $fontColor;
+  font-weight: 700;
 }
