@@ -1,0 +1,36 @@
+@import "generic/colors";
+@import "generic/mixins";
+@import "components/header";
+@import "components/mainSection";
+@import "components/footer";
+@import "pages/home_page";
+@import "pages/search_page";
+@import "pages/books_page";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  $base_font_size_in_px: 16px;
+  font-family: 'Quicksand',sans-serif;
+  background-color: $powderPink;
+  width: 100%;
+  color: $fontColor;
+}
+
+.container {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  background-color: $bgc;
+  border-radius: 5px;
+  border: 2px white solid;
+}
+
+.pages {
+  height: 100vh;
+  color: $fontColor;
+}

@@ -1,0 +1,49 @@
+header i {
+  color: $darkPowder;
+}
+
+.logo {
+  font-family: 'Charmonman', sans-serif;
+  color: $powderPink;
+  font-weight: 700;
+  @include font-size(30px);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 100px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 70px;
+
+  a {
+    text-decoration: none;
+    @include font-size(20px);
+    color: $fontColor;
+  }
+
+  a:hover {
+    //background-color: $powderPink;
+    //padding: 20px;
+    //border-radius: 5px;
+    color: $powderPink;
+    font-weight: 700;
+  }
+  a:focus {
+    background-color: $darkPowder;
+    padding: 20px;
+    border-radius: 5px;
+    color: $powderPink;
+    font-weight: 700;
+  }
+}
+
+
+
+
