@@ -1,17 +1,17 @@
-// Definicja mixinu do konwersji px na rem
-@mixin font-size($size_in_px) {
-  $base_font_size_in_px: 14px; // Ustaw swoją wielkość czcionki bazowej
-
-  $size_in_rem: $size_in_px / $base_font_size_in_px;
-
-  font-size: #{$size_in_rem}rem;
-}
-
-//// Przykład użycia mixinu
-//h1 {
-//  @include font-size(28px); // Wykorzystanie mixinu z wartością w pikselach
+//// Definicja mixinu do konwersji px na rem
+//@mixin font-size($size_in_px) {
+//  $base_font_size_in_px: 14px; // Ustaw swoją wielkość czcionki bazowej
+//
+//  $size_in_rem: $size_in_px / $base_font_size_in_px;
+//
+//  font-size: #{$size_in_rem}rem;
 //}
 //
-//p {
-//  @include font-size(16px); // Wykorzystanie mixinu z wartością w pikselach
-//}
+////// Przykład użycia mixinu
+////h1 {
+////  @include font-size(28px); // Wykorzystanie mixinu z wartością w pikselach
+////}
+////
+////p {
+////  @include font-size(16px); // Wykorzystanie mixinu z wartością w pikselach
+////}

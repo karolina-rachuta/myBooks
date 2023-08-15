@@ -6,7 +6,7 @@ header i {
   font-family: 'Charmonman', sans-serif;
   color: $powderPink;
   font-weight: 700;
-  @include font-size(30px);
+  font-size: 30px;
 }
 
 .navbar {
@@ -24,7 +24,7 @@ header i {
 
   a {
     text-decoration: none;
-    @include font-size(20px);
+    font-size: 20px;
     color: $fontColor;
   }
 
@@ -35,7 +35,16 @@ header i {
     color: $powderPink;
     font-weight: 700;
   }
+
   a:focus {
+    background-color: $darkPowder;
+    padding: 20px;
+    border-radius: 5px;
+    color: $powderPink;
+    font-weight: 700;
+  }
+
+  a:active {
     background-color: $darkPowder;
     padding: 20px;
     border-radius: 5px;

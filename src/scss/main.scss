@@ -14,7 +14,7 @@
 }
 
 html, body {
-  $base_font_size_in_px: 16px;
+  font-size: 16px;
   font-family: 'Quicksand',sans-serif;
   background-color: $powderPink;
   width: 100%;
@@ -29,3 +29,8 @@ html, body {
   border-radius: 5px;
   border: 2px white solid;
 }
+
+//.page__container {
+//  display: flex;
+//  justify-content: center;
+//}

@@ -1,0 +1,44 @@
+.books__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+
+  .book__list {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    width: 400px;
+    height: 320px;
+    background-color: $darkPowder;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    align-items: center;
+
+    img {
+      width: 200px;
+    }
+
+    span {
+      width: 200px;
+      text-align: center;
+
+      .fa-book-open {
+        font-size: 80px;
+        color: $powderPink;
+      }
+    }
+
+    .book__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      width: 200px;
+    }
+  }
+}
+
+
