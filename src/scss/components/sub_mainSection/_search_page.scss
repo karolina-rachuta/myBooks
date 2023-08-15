@@ -1,3 +1,32 @@
+.form__input {
+  height: 40px;
+  width: 300px;
+  font-size: 18px;
+  color: $fontColor;
+  background-color: $darkPowder;
+  border: none;
+  box-shadow: 1px 1px 5px $fontColor ;
+  padding-left: 10px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $powderPink;
+  opacity: 1; /* Firefox */
+  padding-left: 10px;
+}
+
+.form__btn {
+  height: 40px;
+  width: 100px;
+  font-size: 18px;
+  background-color: $darkGreen;
+  border: none;
+  box-shadow: 1px 1px 5px $fontColor;
+  color: $fontColor;
+  font-weight: 700;
+}
+
+
 .loading {
   i {
     font-size: 30px;

@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Books = () => {
+export const Login = () => {
     return (
         <div className= "pages">
-            <h1>Books</h1>
+            <h1>Log here</h1>
         </div>
     )
 }

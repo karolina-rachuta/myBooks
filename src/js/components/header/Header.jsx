@@ -15,11 +15,11 @@ export const Header = () => {
                     </li>
                     <li>
                         <NavLink
-                            to="/search">Search</NavLink>
+                            to="/login">Login</NavLink>
                     </li>
                     <li>
                         <NavLink
-                            to="/books">Books</NavLink>
+                            to="/search">Search&Books</NavLink>
                     </li>
                 </ul>
             </nav>

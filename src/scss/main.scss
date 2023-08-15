@@ -3,10 +3,10 @@
 @import "components/header";
 @import "components/mainSection";
 @import "components/footer";
-@import "pages/home_page";
-@import "pages/search_page";
-@import "pages/books_page";
-
+@import "components/sub_mainSection/home_page";
+@import "components/sub_mainSection/search_page";
+@import "components/sub_mainSection/login_page";
+@import "components/sub_mainSection/books_page";
 * {
   margin: 0;
   padding: 0;

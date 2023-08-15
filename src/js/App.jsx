@@ -4,7 +4,7 @@ import '../scss/main.scss'
 import {HashRouter, Routes, Route} from "react-router-dom";
 import {Home} from "./pages/Home.jsx";
 import {Search} from "./pages/Search.jsx";
-import {Books} from "./pages/Books.jsx";
+import {Login} from "./pages/Login.jsx";
 import {Layout} from "./layouts/Layout.jsx";
 
 const App = () => {
@@ -13,8 +13,8 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
+                    <Route path="login" element={<Login />} />
                     <Route path="search" element={<Search />} />
-                    <Route path="books" element={<Books />} />
                 </Route>
             </Routes>
         </HashRouter>
