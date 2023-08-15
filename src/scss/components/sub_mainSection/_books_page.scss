@@ -1,6 +1,18 @@
-.book__camp {
+.book__comp {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+
+  .fa-bookmark {
+    color: $darkPowder;
+  }
+
+  h1 {
+    //font-family: "Charmonman", sans-serif;
+    //color: $powderPink;
+    color: $fontColor;
+  }
 }
 
 .reads__container {
@@ -11,9 +23,21 @@
 }
 
 .read__container {
-  border: 1px solid white;
+  border: 3px solid white;
   width: 400px;
-  height: 500px;
-  padding: 10px;
+  min-height: 500px;
+  padding: 20px;
   border-radius: 10px;
+
+  h2 {
+    color: $powderPink;
+  }
+
+  .fa-book-bookmark {
+    color: $darkPowder;
+  }
+
+  .fa-book-open {
+    color: $darkPowder;
+  }
 }
