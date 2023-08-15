@@ -1,3 +1,16 @@
+.loading {
+  i {
+    font-size: 30px;
+    font-weight: 700;
+    color:$darkGreen;
+  }
+
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
 .books__list {
   display: flex;
   justify-content: center;

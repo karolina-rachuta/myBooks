@@ -35,7 +35,7 @@ export const Search = () => {
                            }}/>
                     <button type="submit" className="form__btn">Search</button>
                 </form>
-                {loading ? <div><i className="fa-solid fa-spinner"></i> loading</div> :
+                {loading ? <div className="loading"><i className="fa-solid fa-spinner"></i> loading</div> :
                     error ? (`Wystąpił błąd: ${error}`)
                         :
                         <div className="books__list">
