@@ -4,10 +4,12 @@ export const Search = () => {
     const [search, setSearch] = useState("");
     const [books, setBooks] = useState([]);
     const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         console.log("szukam");
         if (search.length > 4) {
+            setLoading(true)
             fetch(`https://openlibrary.org/search.json?title=${search}`)
                 .then((res) => res.json())
                 .then((response) => {
@@ -17,7 +19,8 @@ export const Search = () => {
                     // console.log(response.docs[0].cover_i[0])
                     setBooks(response.docs);
                 })
-                .catch((err) => setError(err));
+                .then(() => setLoading(false))
+                .catch((err) => setError(err))
         }
     }, [search]);
 
@@ -32,26 +35,28 @@ export const Search = () => {
                            }}/>
                     <button type="submit" className="form__btn">Search</button>
                 </form>
-                {error ? (`Wystąpił błąd: ${error}`)
-                    :
-                    <div className="books__list">
-                        {books.map((el) =>
-                            <>
-                                <div className="book__list">
-                                    {el.cover_i ? (
-                                        <img src={`https://covers.openlibrary.org/b/id/${el.cover_i}-M.jpg`}
-                                             alt="Cover"/>
-                                    ) : (
-                                        <span><i className="fa-solid fa-book-open"></i></span>
-                                    )}
-                                    <div className="book__text">
-                                        <span><i className="fa-solid fa-bookmark"></i> {el.title}</span>
-                                        <span><i className="fa-solid fa-user"></i> {el.author_name}</span>
+                {loading ? <div><i className="fa-solid fa-spinner"></i> loading</div> :
+                    error ? (`Wystąpił błąd: ${error}`)
+                        :
+                        <div className="books__list">
+                            {books.map((el) =>
+                                <>
+                                    <div className="book__list">
+                                        {el.cover_i ? (
+                                            <img src={`https://covers.openlibrary.org/b/id/${el.cover_i}-M.jpg`}
+                                                 alt="Cover"/>
+                                        ) : (
+                                            <span><i className="fa-solid fa-book-open"></i></span>
+                                        )}
+                                        <div className="book__text">
+                                            <span><i className="fa-solid fa-bookmark"></i> {el.title}</span>
+                                            <span><i className="fa-solid fa-user"></i> {el.author_name}</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </>
-                        )}
-                    </div>}
+                                </>
+                            )}
+                        </div>
+                }
             </div>
         </div>
     )
