@@ -75,7 +75,7 @@
         color: $powderPink;
       }
     }
-    }
+  }
 
   .book__list--selected {
     background-color: $darkGreen;
@@ -86,10 +86,38 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     width: 200px;
-  }
-}
 
+    .select__book {
+      background-color: $powderPink;
+      height: 30px;
+      width: 100px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px darkslategray;
+      color: $bgc;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+    .select__btn {
+      background-color: $powderPink;
+      height: 30px;
+      width: 60px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px darkslategray;
+      color: $bgc;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+
+
+}
 
 

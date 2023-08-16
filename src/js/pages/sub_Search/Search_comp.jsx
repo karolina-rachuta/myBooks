@@ -2,7 +2,20 @@ import React, {useEffect, useState} from 'react';
 
 
 // eslint-disable-next-line react/prop-types
-export const Search_component = ({setBooks, books, selectedBook, setSelectedBook}) => {
+export const Search_component = ({
+                                     books,
+                                     setBooks,
+                                     selectedBook,
+                                     setSelectedBook,
+                                     setReadingBooks,
+                                     readingBooks,
+                                     setReadBooks,
+                                     setToReadBooks,
+                                     readBooks,
+                                     toReadBooks,
+                                     setSelectedCategory,
+                                     selectedCategory
+                                 }) => {
     const [search, setSearch] = useState("");
     // const [books, setBooks] = useState([]);
     const [error, setError] = useState(false);
@@ -25,6 +38,19 @@ export const Search_component = ({setBooks, books, selectedBook, setSelectedBook
 
     const handleListClick = (index) => {
         setSelectedBook(index);
+        console.log(index);
+    }
+    const handleCategoryChange = (index) => {
+        const selectedCatBook = books[index];
+
+        if (selectedCategory === "read") {
+            setReadBooks([...readBooks, selectedCatBook]);
+        } else if (selectedCategory === "reading") {
+            setReadingBooks([...readingBooks, selectedCatBook]);
+        } else if (selectedCategory === "toRead") {
+            setToReadBooks([...toReadBooks, selectedCatBook]);
+        }
+        console.log(selectedCatBook);
     }
 
     return (
@@ -37,13 +63,14 @@ export const Search_component = ({setBooks, books, selectedBook, setSelectedBook
                        }}/>
                 <button type="submit" className="form__btn">Search</button>
             </form>
-            {loading ? <div className="loading"><i className="fa-solid fa-spinner"></i> loading</div> :
+            {loading ? <div className="loading"><i className="fa-solid fa-spinner"></i> loading</div>
+                :
                 error ? (`Wystąpił błąd: ${error}`)
-                    :
-                    <div className="books__list">
+                    : <div className="books__list">
                         {books.map((el, index) =>
                             <>
-                                <div key={index} onClick={()=>handleListClick(index)} className={selectedBook === index ? "book__list book__list--selected" : "book__list"}>
+                                <div key={index} onClick={() => handleListClick(index)}
+                                     className={selectedBook === index ? "book__list book__list--selected" : "book__list"}>
                                     {el.cover_i ? (
                                         <img src={`https://covers.openlibrary.org/b/id/${el.cover_i}-M.jpg`}
                                              alt="Cover"/>
@@ -53,6 +80,15 @@ export const Search_component = ({setBooks, books, selectedBook, setSelectedBook
                                     <div className="book__text">
                                         <span><i className="fa-solid fa-bookmark"></i> {el.title}</span>
                                         <span><i className="fa-solid fa-user"></i> {el.author_name}</span>
+                                        <select  className="select__book"
+                                                value={selectedCategory}
+                                                onChange={(e) => setSelectedCategory(e.target.value)}>
+                                            <option value="category">Category</option>
+                                            <option value="read">Past</option>
+                                            <option value="reading">Present</option>
+                                            <option value="toRead">Future</option>
+                                        </select>
+                                        <button className="select__btn" onClick={() => handleCategoryChange(index)}>Add</button>
                                     </div>
                                 </div>
                             </>
@@ -62,3 +98,5 @@ export const Search_component = ({setBooks, books, selectedBook, setSelectedBook
         </div>
     )
 }
+
+//czemu podkresla mi map, czemu react podkresla i propsy. czy jsx rozni sie niz js
