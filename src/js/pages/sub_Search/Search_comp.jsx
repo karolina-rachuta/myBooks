@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 
-export const Search_component = () => {
+
+// eslint-disable-next-line react/prop-types
+export const Search_component = ({setBooks, books, selectedBook, setSelectedBook}) => {
     const [search, setSearch] = useState("");
-    const [books, setBooks] = useState([]);
+    // const [books, setBooks] = useState([]);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
+    // const [selectedBook, setSelectedBook] = useState(null);
 
     useEffect(() => {
         console.log("szukam");
@@ -20,38 +23,42 @@ export const Search_component = () => {
         }
     }, [search]);
 
-    return (
-            <div className="page__container">
-                <h1>Search</h1>
-                <form onSubmit={(e) => e.preventDefault()} className="form__box">
-                    <input className="form__input" type="text" placeholder="Title of book" value={search}
-                           onChange={(e) => {
-                               setSearch(e.target.value)
-                           }}/>
-                    <button type="submit" className="form__btn">Search</button>
-                </form>
-                {loading ? <div className="loading"><i className="fa-solid fa-spinner"></i> loading</div> :
-                    error ? (`Wystąpił błąd: ${error}`)
-                        :
-                        <div className="books__list">
-                            {books.map((el) =>
-                                <>
-                                    <div className="book__list">
-                                        {el.cover_i ? (
-                                            <img src={`https://covers.openlibrary.org/b/id/${el.cover_i}-M.jpg`}
-                                                 alt="Cover"/>
-                                        ) : (
-                                            <span><i className="fa-solid fa-book-open"></i></span>
-                                        )}
-                                        <div className="book__text">
-                                            <span><i className="fa-solid fa-bookmark"></i> {el.title}</span>
-                                            <span><i className="fa-solid fa-user"></i> {el.author_name}</span>
-                                        </div>
-                                    </div>
-                                </>
-                            )}
-                        </div>
-                }
-            </div>
-        )
+    const handleListClick = (index) => {
+        setSelectedBook(index);
     }
+
+    return (
+        <div className="page__container">
+            <h1>Search</h1>
+            <form onSubmit={(e) => e.preventDefault()} className="form__box">
+                <input className="form__input" type="text" placeholder="Title of book" value={search}
+                       onChange={(e) => {
+                           setSearch(e.target.value)
+                       }}/>
+                <button type="submit" className="form__btn">Search</button>
+            </form>
+            {loading ? <div className="loading"><i className="fa-solid fa-spinner"></i> loading</div> :
+                error ? (`Wystąpił błąd: ${error}`)
+                    :
+                    <div className="books__list">
+                        {books.map((el, index) =>
+                            <>
+                                <div key={index} onClick={()=>handleListClick(index)} className={selectedBook === index ? "book__list book__list--selected" : "book__list"}>
+                                    {el.cover_i ? (
+                                        <img src={`https://covers.openlibrary.org/b/id/${el.cover_i}-M.jpg`}
+                                             alt="Cover"/>
+                                    ) : (
+                                        <span><i className="fa-solid fa-book-open"></i></span>
+                                    )}
+                                    <div className="book__text">
+                                        <span><i className="fa-solid fa-bookmark"></i> {el.title}</span>
+                                        <span><i className="fa-solid fa-user"></i> {el.author_name}</span>
+                                    </div>
+                                </div>
+                            </>
+                        )}
+                    </div>
+            }
+        </div>
+    )
+}

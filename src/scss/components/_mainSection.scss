@@ -43,8 +43,9 @@
   border: 1px solid darkgrey;
   margin-top: 50px;
   border-radius: 10px;
+  cursor: pointer;
 
   .fa-circle-right {
-    color: #EAB2A0;
+    color: $powderPink;
   }
 }
