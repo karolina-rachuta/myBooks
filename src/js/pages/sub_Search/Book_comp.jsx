@@ -1,4 +1,4 @@
-
+import React from 'react';
 // eslint-disable-next-line react/prop-types
 export const Book_component = ({readBooks, setReadBooks, readingBooks, setReadingBooks, toReadBooks, setToReadBooks,}) => {
 
@@ -50,15 +50,15 @@ return (
                                 <h3>{book.title} </h3>
                                 <h3><i className="fa-solid fa-user"></i> {book.author_name[0]}</h3>
                                 <h4>Take out message:</h4>
-                                <textarea></textarea>
+                                <textarea className="textarea"></textarea>
                                 <div>
                                     <input type="date"/>
                                     <button>Save</button>
                                 </div>
-
+                                <button onClick={() => removePastBook(index)}><i
+                                    className="fa-solid fa-circle-minus"></i></button>
                             </div>
-                            <button className="select__btn" onClick={() => removePastBook(index)}><i
-                                className="fa-solid fa-circle-minus"></i></button>
+
                         </div>
                     ))}
                 </div>
@@ -77,8 +77,9 @@ return (
                             <div className="book__right_info">
                                 <h3>{book.title} </h3>
                                 <h3><i className="fa-solid fa-user"></i> {book.author_name[0]}</h3>
-                                <button onClick={() => moveToPastReads(index)}>Move to Past Reads</button>
-                                <button className="select__btn" onClick={() => removePresentBook(index)}><i
+                                <button onClick={() => moveToPastReads(index)}><i
+                                    className="fa-solid fa-arrow-turn-up"></i></button>
+                                <button onClick={() => removePresentBook(index)}><i
                                     className="fa-solid fa-circle-minus"></i>
                                 </button>
                             </div>
@@ -100,8 +101,9 @@ return (
                             <div className="book__right_info">
                                 <h3> {book.title} </h3>
                                 <h3><i className="fa-solid fa-user"></i> {book.author_name[0]}</h3>
-                                <button onClick={() => moveToPresentReads(index)}>Move to Present Reads</button>
-                                <button className="select__btn" onClick={() => removeFutureBook(index)}><i
+                                <button onClick={() => moveToPresentReads(index)}><i
+                                    className="fa-solid fa-arrow-turn-up"></i></button>
+                                <button onClick={() => removeFutureBook(index)}><i
                                     className="fa-solid fa-circle-minus"></i></button>
                             </div>
 

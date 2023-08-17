@@ -46,28 +46,67 @@
     .read__container--books {
       width: 100%;
       height: 100%;
-      border: 3px solid $fontColor;
+      border-left: 30px solid $darkPowder;
       border-radius: 10px;
-      padding: 20px;
+      //padding: 20px;
       margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
       .read__container--book {
         margin-bottom: 10px;
         column-gap: 20px;
         display: flex;
-        background-color: $darkGreen;
+        //background-color: $darkGreen;
         color: $powderPink;
         border-radius: 10px;
+        border: 1px solid $powderPink;
+        width: 50%;
+        min-height: 300px;
 
+        .fa-book-open {
+          //background-color: $bgc;
+          color: $powderPink;
+          font-size: 100px;
+        }
         img {
           width: 200px;
           max-height: 300px;
+          border-radius: 10px;
         }
 
         .book__right_info {
           display: flex;
           flex-direction: column;
           align-items: start;
+
+          .textarea {
+            min-width:90%;
+            min-height: 50%;
+            background-color: $bgc;
+            color:$powderPink;
+            border: 1px solid $darkPowder;
+            border-radius: 10px;
+          }
+
+          .fa-arrow-turn-up {
+            background-color: $bgc;
+            color: $powderPink;
+            font-weight: 700;
+            font-size: 33px;
+            cursor: pointer;
+          }
+
+          .fa-circle-minus {
+            background-color: $bgc;
+            color: $powderPink;
+            font-weight: 700;
+            font-size: 25px;
+            cursor: pointer;
+          }
+
+
 
           h3 {
             color: #FFFFFF;
@@ -76,6 +115,5 @@
       }
     }
   }
-
 }
 
