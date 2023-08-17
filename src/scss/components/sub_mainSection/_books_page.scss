@@ -19,7 +19,7 @@
 .reads__container {
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 10px;
   width: 1200px;
   height: 100%;
 
@@ -31,6 +31,21 @@
     padding: 20px;
     //border-radius: 10px;
 
+    .remove__btn {
+      text-align: right;
+      max-width: 5%;
+      height: 100%;
+      display: flex;
+      align-items: end;
+      justify-content: end;
+      .fa-circle-minus {
+        background-color: $bgc;
+        color: $powderPink;
+        font-weight: 700;
+        font-size: 25px;
+        cursor: pointer;
+      }
+    }
     h2 {
       color: $fontColor;
     }
@@ -56,14 +71,18 @@
 
       .read__container--book {
         margin-bottom: 10px;
-        column-gap: 20px;
         display: flex;
+        column-gap: 20px;
         //background-color: $darkGreen;
         color: $powderPink;
         border-radius: 10px;
         border: 1px solid $powderPink;
         width: 50%;
         min-height: 300px;
+        row-gap: 5px;
+        align-items: stretch;
+        justify-content: center;
+
 
         .fa-book-open {
           //background-color: $bgc;
@@ -98,13 +117,7 @@
             cursor: pointer;
           }
 
-          .fa-circle-minus {
-            background-color: $bgc;
-            color: $powderPink;
-            font-weight: 700;
-            font-size: 25px;
-            cursor: pointer;
-          }
+
 
 
 
