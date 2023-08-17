@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Search_component} from "./sub_Search/Search_comp.jsx";
 import {Book_component} from "./sub_Search/Book_comp.jsx";
 
@@ -34,7 +34,8 @@ export const Search = () => {
                 {visible ? <Search_component
                         selectedBook={selectedBook}
                         setSelectedBook={setSelectedBook}
-                        books={books} setBooks={setBooks}
+                        books={books}
+                        setBooks={setBooks}
                         toReadBooks={toReadBooks}
                         setToReadBooks={setToReadBooks}
                         readingBooks={readingBooks}
@@ -45,11 +46,12 @@ export const Search = () => {
                         setSelectedCategory={setSelectedCategory}
                     />
                     : <Book_component
-                        selectedBook={selectedBook}
-                        books={books}
                         toReadBooks={toReadBooks}
+                        setToReadBooks={setToReadBooks}
                         readingBooks={readingBooks}
+                        setReadingBooks={setReadingBooks}
                         readBooks={readBooks}
+                        setReadBooks={setReadBooks}
                     />}
             </div>
         </div>

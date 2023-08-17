@@ -1,82 +1,115 @@
-import React from 'react';
 
 // eslint-disable-next-line react/prop-types
-export const Book_component = ({selectedBook, books, readBooks, readingBooks, toReadBooks}) => {
-    // const selectedBookItem = selectedBook !== null ? books[selectedBook] : null;
+export const Book_component = ({readBooks, setReadBooks, readingBooks, setReadingBooks, toReadBooks, setToReadBooks,}) => {
 
-    return (
-        <div className="book__comp">
-            <h1>My Books</h1>
-            {/*{selectedBook && (*/}
-            {/*    <div className="selected-book">*/}
-            {/*        <h2>{selectedBookItem.title}</h2>*/}
-            {/*        /!* Render other details as needed *!/*/}
-            {/*        <div className="books__list">*/}
-            {/*            <div className="book__list book__list--selected">*/}
-            {/*                {selectedBookItem.cover_i ? (*/}
-            {/*                    <img src={`https://covers.openlibrary.org/b/id/${selectedBookItem.cover_i}-M.jpg`}*/}
-            {/*                         alt="Cover"/>*/}
-            {/*                ) : (*/}
-            {/*                    <span><i className="fa-solid fa-book-open"></i></span>*/}
-            {/*                )}*/}
-            {/*                <div className="book__text">*/}
-            {/*                    <span><i className="fa-solid fa-bookmark"></i> {selectedBookItem.title}</span>*/}
-            {/*                    <span><i className="fa-solid fa-user"></i> {selectedBookItem.author_name}</span>*/}
-            {/*                </div>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
+    const removePastBook = (index) => {
+        const updatedReadBooks = [...readBooks];
+        updatedReadBooks.splice(index, 1);
+        setReadBooks(updatedReadBooks);
+    };
 
-            <div className="reads__container">
-                <div className="read__container">
-                    <h2><i className="fa-solid fa-book-bookmark"></i> Past reads: </h2>
+    const removePresentBook = (index) => {
+        const updatedReadingBooks = [...readingBooks];
+        updatedReadingBooks.splice(index, 1);
+        setReadingBooks(updatedReadingBooks);
+    };
+
+    const removeFutureBook = (index) => {
+        const updatedToReadBooks = [...toReadBooks];
+        updatedToReadBooks.splice(index, 1);
+        setToReadBooks(updatedToReadBooks);
+    };
+
+    const moveToPastReads = (index) => {
+        const bookToMove = readingBooks[index];
+        setReadingBooks((prevReadingBooks) => prevReadingBooks.filter((_, i) => i !== index));
+        setReadBooks((prevReadBooks) => [...prevReadBooks, bookToMove]);
+    };
+
+    const moveToPresentReads = (index) => {
+        const bookToMove = toReadBooks[index];
+        setToReadBooks((prevState) => prevState.filter((_, i) => i !== index));
+        setReadingBooks((prevState) => [...prevState, bookToMove]);
+    }
+return (
+    <div className="book__comp">
+        <h1>My Books</h1>
+        <div className="reads__container">
+            <div className="read__container">
+                <h2><i className="fa-solid fa-book-bookmark"></i> Past reads: </h2>
+                <div className="read__container--books">
                     {readBooks.map((book, index) => (
-                        <div className="books__list" key={index}>
-                            <span>{book.title}</span>
-                            <span>{book.author_name[0]}</span>
+                        <div className="read__container--book" key={index}>
                             {book.cover_i ? (
                                 <img src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
                                      alt="Cover"/>
                             ) : (
                                 <span><i className="fa-solid fa-book-open"></i></span>
                             )}
+                            <div className="book__right_info">
+                                <h3>{book.title} </h3>
+                                <h3><i className="fa-solid fa-user"></i> {book.author_name[0]}</h3>
+                                <h4>Take out message:</h4>
+                                <textarea></textarea>
+                                <div>
+                                    <input type="date"/>
+                                    <button>Save</button>
+                                </div>
 
+                            </div>
+                            <button className="select__btn" onClick={() => removePastBook(index)}><i
+                                className="fa-solid fa-circle-minus"></i></button>
                         </div>
                     ))}
                 </div>
-                <div className="read__container">
-                    <h2><i className="fa-solid fa-book-open"></i> Present reads:</h2>
+            </div>
+            <div className="read__container">
+                <h2><i className="fa-solid fa-book-open"></i> Present reads:</h2>
+                <div className="read__container--books">
                     {readingBooks.map((book, index) => (
-                        <div key={index}>
-                            <h2>{book.title}</h2>
-                            <span>{book.author_name[0]}</span>
+                        <div className="read__container--book" key={index}>
                             {book.cover_i ? (
                                 <img src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
                                      alt="Cover"/>
                             ) : (
                                 <span><i className="fa-solid fa-book-open"></i></span>
                             )}
-
+                            <div className="book__right_info">
+                                <h3>{book.title} </h3>
+                                <h3><i className="fa-solid fa-user"></i> {book.author_name[0]}</h3>
+                                <button onClick={() => moveToPastReads(index)}>Move to Past Reads</button>
+                                <button className="select__btn" onClick={() => removePresentBook(index)}><i
+                                    className="fa-solid fa-circle-minus"></i>
+                                </button>
+                            </div>
                         </div>
                     ))}
                 </div>
-                <div className="read__container">
-                    <h2><i className="fa-solid fa-bookmark"></i> Future reads:</h2>
+            </div>
+            <div className="read__container">
+                <h2><i className="fa-solid fa-bookmark"></i> Future reads:</h2>
+                <div className="read__container--books">
                     {toReadBooks.map((book, index) => (
-                        <div key={index}>
-                            <h2>{book.title}</h2>
-                            <span>{book.author_name[0]}</span>
+                        <div className="read__container--book" key={index}>
                             {book.cover_i ? (
                                 <img src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
                                      alt="Cover"/>
                             ) : (
                                 <span><i className="fa-solid fa-book-open"></i></span>
                             )}
+                            <div className="book__right_info">
+                                <h3> {book.title} </h3>
+                                <h3><i className="fa-solid fa-user"></i> {book.author_name[0]}</h3>
+                                <button onClick={() => moveToPresentReads(index)}>Move to Present Reads</button>
+                                <button className="select__btn" onClick={() => removeFutureBook(index)}><i
+                                    className="fa-solid fa-circle-minus"></i></button>
+                            </div>
 
                         </div>
                     ))}
                 </div>
             </div>
         </div>
-    )
+    </div>
+)
 }

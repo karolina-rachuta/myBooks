@@ -1,26 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 
 
 // eslint-disable-next-line react/prop-types
-export const Search_component = ({
-                                     books,
-                                     setBooks,
-                                     selectedBook,
-                                     setSelectedBook,
-                                     setReadingBooks,
-                                     readingBooks,
-                                     setReadBooks,
-                                     setToReadBooks,
-                                     readBooks,
-                                     toReadBooks,
-                                     setSelectedCategory,
-                                     selectedCategory
-                                 }) => {
+export const Search_component = ({books, setBooks, selectedBook, setSelectedBook, setReadingBooks, readingBooks, setReadBooks, setToReadBooks, readBooks, toReadBooks, setSelectedCategory, selectedCategory}) => {
     const [search, setSearch] = useState("");
-    // const [books, setBooks] = useState([]);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
-    // const [selectedBook, setSelectedBook] = useState(null);
 
     useEffect(() => {
         console.log("szukam");
@@ -98,5 +83,3 @@ export const Search_component = ({
         </div>
     )
 }
-
-//czemu podkresla mi map, czemu react podkresla i propsy. czy jsx rozni sie niz js

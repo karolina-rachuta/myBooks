@@ -3,41 +3,79 @@
   flex-direction: column;
   justify-content: center;
   gap: 50px;
+  height: 100%;
 
   .fa-bookmark {
     color: $darkPowder;
   }
 
   h1 {
-    //font-family: "Charmonman", sans-serif;
-    //color: $powderPink;
     color: $fontColor;
   }
+
+
 }
 
 .reads__container {
   display: flex;
-  column-gap: 20px;
-  width: 100%;
-  //border: 1px solid white;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 1200px;
+  height: 100%;
+
+
+  .read__container {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    padding: 20px;
+    //border-radius: 10px;
+
+    h2 {
+      color: $fontColor;
+    }
+
+    .fa-book-bookmark {
+      color: $darkPowder;
+    }
+
+    .fa-book-open {
+      color: $darkPowder;
+    }
+
+    .read__container--books {
+      width: 100%;
+      height: 100%;
+      border: 3px solid $fontColor;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+
+      .read__container--book {
+        margin-bottom: 10px;
+        column-gap: 20px;
+        display: flex;
+        background-color: $darkGreen;
+        color: $powderPink;
+        border-radius: 10px;
+
+        img {
+          width: 200px;
+          max-height: 300px;
+        }
+
+        .book__right_info {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+
+          h3 {
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+
 }
 
-.read__container {
-  border: 3px solid white;
-  width: 400px;
-  min-height: 500px;
-  padding: 20px;
-  border-radius: 10px;
-
-  h2 {
-    color: $powderPink;
-  }
-
-  .fa-book-bookmark {
-    color: $darkPowder;
-  }
-
-  .fa-book-open {
-    color: $darkPowder;
-  }
-}
