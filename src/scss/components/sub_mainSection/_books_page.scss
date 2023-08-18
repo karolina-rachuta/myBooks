@@ -31,13 +31,14 @@
     padding: 20px;
     //border-radius: 10px;
 
-    .remove__btn {
-      text-align: right;
+    .btn__container {
       max-width: 5%;
       height: 100%;
       display: flex;
+      flex-direction: column;
       align-items: end;
-      justify-content: end;
+      justify-content: space-between;
+
       .fa-circle-minus {
         background-color: $bgc;
         color: $powderPink;
@@ -45,7 +46,16 @@
         font-size: 25px;
         cursor: pointer;
       }
+
+      .fa-arrow-turn-up {
+        background-color: $bgc;
+        color: $powderPink;
+        font-weight: 700;
+        font-size: 33px;
+        cursor: pointer;
+      }
     }
+
     h2 {
       color: $fontColor;
     }
@@ -70,7 +80,7 @@
       justify-content: space-between;
 
       .read__container--book {
-        margin-bottom: 10px;
+        //margin-bottom: 10px;
         display: flex;
         column-gap: 20px;
         //background-color: $darkGreen;
@@ -81,45 +91,65 @@
         min-height: 300px;
         row-gap: 5px;
         align-items: stretch;
-        justify-content: center;
+        justify-content: space-between;
 
+        .img__container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-        .fa-book-open {
-          //background-color: $bgc;
-          color: $powderPink;
-          font-size: 100px;
+          .fa-book-open {
+            //background-color: $bgc;
+            color: $powderPink;
+            font-size: 100px;
+            width: 200px;
+          }
+
+          img {
+            width: 200px;
+            height: auto;
+            max-height: 300px;
+            border-radius: 10px;
+            //text-align: left;
+            margin: 0;
+          }
         }
-        img {
-          width: 200px;
-          max-height: 300px;
-          border-radius: 10px;
-        }
+
 
         .book__right_info {
           display: flex;
           flex-direction: column;
           align-items: start;
+          width: 100%;
+          text-align: left;
+          justify-content: space-around;
 
           .textarea {
-            min-width:90%;
+            min-width: 90%;
             min-height: 50%;
             background-color: $bgc;
-            color:$powderPink;
+            color: $powderPink;
             border: 1px solid $darkPowder;
             border-radius: 10px;
           }
 
-          .fa-arrow-turn-up {
-            background-color: $bgc;
-            color: $powderPink;
-            font-weight: 700;
-            font-size: 33px;
-            cursor: pointer;
+
+          .form__input--date {
+            width: 200px;
+            height: 20px;
+            font-size: 14px;
           }
 
-
-
-
+          .btn__save {
+            height: 20px;
+            width: 40px;
+            font-size: 14px;
+            color:$fontColor;
+            background-color: $darkGreen;
+            border: none;
+            box-shadow: 1px 1px 5px $fontColor;
+            border-radius: 5px;
+          }
 
           h3 {
             color: #FFFFFF;
