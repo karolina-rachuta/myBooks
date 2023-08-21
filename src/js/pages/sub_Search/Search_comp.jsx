@@ -79,7 +79,7 @@ export const Search_component = ({books, setBooks, selectedBook, setSelectedBook
                                     )}
                                     <div className="book__text">
                                         <span><i className="fa-solid fa-bookmark"></i> {el.title}</span>
-                                        <span><i className="fa-solid fa-user"></i> {el.author_name}</span>
+                                        { el.author_name ? <span><i className="fa-solid fa-user"></i> {el.author_name}</span> : null}
                                         <select className="select__book"
                                                 value={bookCategories[index]}
                                                 onChange={(e) => setSelectedCategory(e.target.value)}>

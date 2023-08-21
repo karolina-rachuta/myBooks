@@ -1,7 +1,8 @@
 import {NavLink} from "react-router-dom";
-import React from "react";
 
-export const Header = () => {
+// eslint-disable-next-line react/prop-types
+export const Header = ({logged, name}) => {
+
     return (
         <header className="container">
             <nav className="navbar">
@@ -11,16 +12,25 @@ export const Header = () => {
                 <ul className="menu">
                     <li>
                         <NavLink
-                            to="/">Home</NavLink>
+                            to="/"
+                            className={({ isActive }) => isActive ? 'activeStyle' : undefined}>
+                            Home</NavLink>
                     </li>
-                    <li>
+
+                    {logged ? null
+                        :
+                        <li><NavLink
+                            to="/login"
+                            className={({ isActive }) => isActive ? 'activeStyle' : undefined}>Login</NavLink>
+                        </li>}
+
+                    {logged ? <li>
                         <NavLink
-                            to="/login">Login</NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/search">Search&Books</NavLink>
-                    </li>
+                            to="/search"
+                            className={({ isActive }) => isActive ? 'activeStyle' : undefined}>Search&Books</NavLink>
+                    </li> : null}
+
+                    {logged && <li><h3 style={{color: "#EAB2A0"}}>Cześć {name} &#x263B;!</h3></li>}
                 </ul>
             </nav>
         </header>
