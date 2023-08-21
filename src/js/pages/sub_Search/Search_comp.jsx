@@ -1,11 +1,15 @@
 import React, {useEffect, useState} from 'react';
 
 
+
+
 // eslint-disable-next-line react/prop-types
 export const Search_component = ({books, setBooks, selectedBook, setSelectedBook, setReadingBooks, readingBooks, setReadBooks, setToReadBooks, readBooks, toReadBooks, setSelectedCategory, selectedCategory}) => {
     const [search, setSearch] = useState("");
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [bookCategories, setBookCategories] = useState({});
+
 
     useEffect(() => {
         console.log("szukam");
@@ -21,12 +25,22 @@ export const Search_component = ({books, setBooks, selectedBook, setSelectedBook
         }
     }, [search]);
 
+
     const handleListClick = (index) => {
         setSelectedBook(index);
         console.log(index);
     }
-    const handleCategoryChange = (index) => {
+    const handleCategoryChange = (index, category) => {
+
+
+        setBookCategories(prevCategories => ({
+            ...prevCategories,
+            [index]: category
+        }));
+
+
         const selectedCatBook = books[index];
+
 
         if (selectedCategory === "read") {
             setReadBooks([...readBooks, selectedCatBook]);
@@ -37,6 +51,7 @@ export const Search_component = ({books, setBooks, selectedBook, setSelectedBook
         }
         console.log(selectedCatBook);
     }
+
 
     return (
         <div className="page__container">
@@ -65,8 +80,8 @@ export const Search_component = ({books, setBooks, selectedBook, setSelectedBook
                                     <div className="book__text">
                                         <span><i className="fa-solid fa-bookmark"></i> {el.title}</span>
                                         <span><i className="fa-solid fa-user"></i> {el.author_name}</span>
-                                        <select  className="select__book"
-                                                value={selectedCategory}
+                                        <select className="select__book"
+                                                value={bookCategories[index]}
                                                 onChange={(e) => setSelectedCategory(e.target.value)}>
                                             <option value="category">Category</option>
                                             <option value="read">Past</option>
@@ -83,3 +98,4 @@ export const Search_component = ({books, setBooks, selectedBook, setSelectedBook
         </div>
     )
 }
+
