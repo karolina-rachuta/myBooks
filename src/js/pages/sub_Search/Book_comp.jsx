@@ -57,7 +57,7 @@ export const Book_component = ({
                                 </div>
                                 <div className="book__right_info">
                                     <h3>{book.title} </h3>
-                                    <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3>
+                                    { book.author_name ? <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3> : null }
                                     <h4>Notes:</h4>
                                     <textarea className="textarea"></textarea>
                                     <div>
@@ -91,7 +91,7 @@ export const Book_component = ({
                                 </div>
                                 <div className="book__right_info">
                                     <h3>{book.title} </h3>
-                                    <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3>
+                                    { book.author_name ? <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3> : null }
                                     <h4>Notes:</h4>
                                     <textarea className="textarea"></textarea>
                                     {/*<button className="btn__save">Save</button>*/}
@@ -124,7 +124,7 @@ export const Book_component = ({
                                 </div>
                                 <div className="book__right_info">
                                     <h3> {book.title} </h3>
-                                    <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3>
+                                    { book.author_name ? <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3> : null }
                                     <h4>Notes:</h4>
                                     <textarea className="textarea"></textarea>
                                     {/*<button className="btn__save">Save</button>*/}

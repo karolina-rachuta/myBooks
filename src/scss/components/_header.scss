@@ -32,30 +32,18 @@ header i {
   }
 
   a:hover {
-    //background-color: $powderPink;
-    //padding: 20px;
-    //border-radius: 5px;
     color: $powderPink;
     font-weight: 700;
   }
 
-  a:focus {
-    background-color: $darkPowder;
-    padding: 20px;
-    border-radius: 5px;
-    color: $powderPink;
-    font-weight: 700;
-  }
-
-  a:active {
-    background-color: $darkPowder;
-    padding: 20px;
-    border-radius: 5px;
-    color: $powderPink;
-    font-weight: 700;
-  }
 }
 
 
-
+.activeStyle {
+  background-color: $darkPowder;
+  padding: 15px;
+  border-radius: 5px;
+  color: $darkGreen;
+  font-weight: 700;
+}
 
