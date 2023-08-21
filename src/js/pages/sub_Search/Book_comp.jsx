@@ -57,17 +57,17 @@ export const Book_component = ({
                                 </div>
                                 <div className="book__right_info">
                                     <h3>{book.title} </h3>
-                                    <h3><i className="fa-solid fa-user"></i> {book.author_name[0]}</h3>
-                                    <h4>Take out message:</h4>
+                                    <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3>
+                                    <h4>Notes:</h4>
                                     <textarea className="textarea"></textarea>
                                     <div>
                                         <input className="form__input form__input--date" type="date"/>
-                                        <button className="btn__save">Save</button>
+                                        {/*<button className="btn__save">Save</button>*/}
                                     </div>
 
                                 </div>
                                 <div className="btn__container ">
-                                    <button></button>
+                                    <p></p>
                                     <button onClick={() => removePastBook(index)}><i
                                         className="fa-solid fa-circle-minus"></i></button>
 
@@ -91,9 +91,10 @@ export const Book_component = ({
                                 </div>
                                 <div className="book__right_info">
                                     <h3>{book.title} </h3>
-                                    <h3><i className="fa-solid fa-user"></i> {book.author_name[0]}</h3>
-                                    <h4>Take out message:</h4>
+                                    <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3>
+                                    <h4>Notes:</h4>
                                     <textarea className="textarea"></textarea>
+                                    {/*<button className="btn__save">Save</button>*/}
                                 </div>
                                 <div className="btn__container ">
                                     <button onClick={() => moveToPastReads(index)}><i
@@ -123,9 +124,10 @@ export const Book_component = ({
                                 </div>
                                 <div className="book__right_info">
                                     <h3> {book.title} </h3>
-                                    <h3><i className="fa-solid fa-user"></i> {book.author_name[0]}</h3>
-                                    <h4>Take out message:</h4>
+                                    <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3>
+                                    <h4>Notes:</h4>
                                     <textarea className="textarea"></textarea>
+                                    {/*<button className="btn__save">Save</button>*/}
                                 </div>
 
                                 <div className="btn__container ">
