@@ -56,7 +56,7 @@ export const Search_component = ({books, setBooks, selectedBook, setSelectedBook
     return (
         <div className="page__container">
             <h1>Search</h1>
-            <form onSubmit={(e) => e.preventDefault()} className="form__box">
+            <form onSubmit={(e) => e.preventDefault()}>
                 <input className="form__input" type="text" placeholder="Title of book" value={search}
                        onChange={(e) => {
                            setSearch(e.target.value)
