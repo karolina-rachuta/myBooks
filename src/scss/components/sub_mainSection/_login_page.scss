@@ -1,3 +1,9 @@
-.page__container--login {
-  margin-top: 200px;
+//.page__container--login {
+//  margin-top: 200px;
+//}
+
+.pages--login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -3,7 +3,7 @@
 [karolina-rachuta](https://github.com/karolina-rachuta)
 
 ## Live Demo:
-
+[https://mybooksrecords.netlify.app/](https://mybooksrecords.netlify.app/)
 
 ## About the project:
 This is an application designed for searching and cataloging books. 
@@ -26,7 +26,15 @@ Additionally, the application offers the option to write personal notes for each
 - Local Storage
 
 ## API Reference
-https://openlibrary.org/search.json?title=
+
+```
+https://openlibrary.org/search.json?title=${search}
+```
+
+| Parameter | Type     | Description                                  |
+|:----------| :------- |:---------------------------------------------|
+| `search`  | `string` | **Required**. Title of book to fetch |
+
 
 ## Acknowledgments
 - GitHub Pages
