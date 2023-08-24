@@ -1,15 +1,26 @@
-import React, {useEffect, useState} from 'react';
-
-
+import {useEffect, useState} from 'react';
 
 
 // eslint-disable-next-line react/prop-types
-export const Search_component = ({books, setBooks, selectedBook, setSelectedBook, setReadingBooks, readingBooks, setReadBooks, setToReadBooks, readBooks, toReadBooks, setSelectedCategory, selectedCategory}) => {
+export const Search_component = ({
+                                     books,
+                                     setBooks,
+                                     selectedBook,
+                                     setSelectedBook,
+                                     setReadingBooks,
+                                     readingBooks,
+                                     setReadBooks,
+                                     setToReadBooks,
+                                     readBooks,
+                                     toReadBooks,
+                                     setSelectedCategory,
+                                     selectedCategory
+                                 }) => {
+
     const [search, setSearch] = useState("");
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
     const [bookCategories, setBookCategories] = useState({});
-
 
     useEffect(() => {
         console.log("szukam");
@@ -25,23 +36,16 @@ export const Search_component = ({books, setBooks, selectedBook, setSelectedBook
         }
     }, [search]);
 
-
     const handleListClick = (index) => {
         setSelectedBook(index);
         console.log(index);
     }
     const handleCategoryChange = (index, category) => {
-
-
         setBookCategories(prevCategories => ({
             ...prevCategories,
             [index]: category
         }));
-
-
         const selectedCatBook = books[index];
-
-
         if (selectedCategory === "read") {
             setReadBooks([...readBooks, selectedCatBook]);
         } else if (selectedCategory === "reading") {
@@ -51,7 +55,6 @@ export const Search_component = ({books, setBooks, selectedBook, setSelectedBook
         }
         console.log(selectedCatBook);
     }
-
 
     return (
         <div className="page__container">
@@ -65,9 +68,9 @@ export const Search_component = ({books, setBooks, selectedBook, setSelectedBook
             </form>
             {loading ? <div className="loading"><i className="fa-solid fa-spinner"></i> loading</div>
                 :
-                error ? (`Wystąpił błąd: ${error}`)
-                    : <div className="books__list">
-                        {books.map((el, index) =>
+                error ?
+                    (`Wystąpił błąd: ${error}`)
+                    : <div className="books__list"> {books.map((el, index) =>
                             <>
                                 <div key={index} onClick={() => handleListClick(index)}
                                      className={selectedBook === index ? "book__list book__list--selected" : "book__list"}>
@@ -79,7 +82,8 @@ export const Search_component = ({books, setBooks, selectedBook, setSelectedBook
                                     )}
                                     <div className="book__text">
                                         <span><i className="fa-solid fa-bookmark"></i> {el.title}</span>
-                                        { el.author_name ? <span><i className="fa-solid fa-user"></i> {el.author_name}</span> : null}
+                                        {el.author_name ?
+                                            <span><i className="fa-solid fa-user"></i> {el.author_name}</span> : null}
                                         <select className="select__book"
                                                 value={bookCategories[index]}
                                                 onChange={(e) => setSelectedCategory(e.target.value)}>
@@ -88,7 +92,8 @@ export const Search_component = ({books, setBooks, selectedBook, setSelectedBook
                                             <option value="reading">Present</option>
                                             <option value="toRead">Future</option>
                                         </select>
-                                        <button className="select__btn" onClick={() => handleCategoryChange(index)}>Add</button>
+                                        <button className="select__btn" onClick={() => handleCategoryChange(index)}>Add
+                                        </button>
                                     </div>
                                 </div>
                             </>

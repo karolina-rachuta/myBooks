@@ -26,7 +26,6 @@ const App = () => {
     useEffect(() => {
         setLogged(name !== null);
     }, [name]);
-
     // localStorage.removeItem('name');
     return (
         <HashRouter>

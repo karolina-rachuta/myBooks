@@ -13,23 +13,24 @@ export const Header = ({logged, name}) => {
                     <li>
                         <NavLink
                             to="/"
-                            className={({ isActive }) => isActive ? 'activeStyle' : undefined}>
+                            className={({isActive}) => isActive ? 'activeStyle' : undefined}>
                             Home</NavLink>
                     </li>
-
-                    {logged ? null
-                        :
-                        <li><NavLink
-                            to="/login"
-                            className={({ isActive }) => isActive ? 'activeStyle' : undefined}>Login</NavLink>
+                    {logged ?
+                        null
+                        : <li>
+                            <NavLink
+                                to="/login"
+                                className={({isActive}) => isActive ? 'activeStyle' : undefined}>Login</NavLink>
                         </li>}
 
-                    {logged ? <li>
-                        <NavLink
-                            to="/search"
-                            className={({ isActive }) => isActive ? 'activeStyle' : undefined}>Search&Books</NavLink>
-                    </li> : null}
-
+                    {logged ?
+                        <li>
+                            <NavLink
+                                to="/search"
+                                className={({isActive}) => isActive ? 'activeStyle' : undefined}>Search&Books</NavLink>
+                        </li>
+                        : null}
                     {logged && <li><h3 style={{color: "#EAB2A0"}}>Hello, {name}!</h3></li>}
                 </ul>
             </nav>

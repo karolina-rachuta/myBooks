@@ -1,4 +1,3 @@
-import React from 'react';
 // eslint-disable-next-line react/prop-types
 export const Book_component = ({
                                    readBooks,
@@ -38,6 +37,7 @@ export const Book_component = ({
         setToReadBooks((prevState) => prevState.filter((_, i) => i !== index));
         setReadingBooks((prevState) => [...prevState, bookToMove]);
     }
+
     return (
         <div className="book__comp">
             <h1>My Books</h1>
@@ -57,7 +57,8 @@ export const Book_component = ({
                                 </div>
                                 <div className="book__right_info">
                                     <h3>{book.title} </h3>
-                                    { book.author_name ? <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3> : null }
+                                    {book.author_name ?
+                                        <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3> : null}
                                     <h4>Notes:</h4>
                                     <textarea className="textarea"></textarea>
                                     <div>
@@ -82,16 +83,15 @@ export const Book_component = ({
                         {readingBooks.map((book, index) => (
                             <div className="read__container--book" key={index}>
                                 <div className="img__container">
-                                    {book.cover_i ? (
-                                        <img src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
-                                             alt="Cover"/>
-                                    ) : (
-                                        <span><i className="fa-solid fa-book-open"></i></span>
-                                    )}
+                                    {book.cover_i ?
+                                        (<img src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
+                                              alt="Cover"/>)
+                                        : (<span><i className="fa-solid fa-book-open"></i></span>)}
                                 </div>
                                 <div className="book__right_info">
                                     <h3>{book.title} </h3>
-                                    { book.author_name ? <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3> : null }
+                                    {book.author_name ?
+                                        <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3> : null}
                                     <h4>Notes:</h4>
                                     <textarea className="textarea"></textarea>
                                     {/*<button className="btn__save">Save</button>*/}
@@ -103,8 +103,6 @@ export const Book_component = ({
                                         className="fa-solid fa-circle-minus"></i>
                                     </button>
                                 </div>
-
-
                             </div>
                         ))}
                     </div>
@@ -124,12 +122,12 @@ export const Book_component = ({
                                 </div>
                                 <div className="book__right_info">
                                     <h3> {book.title} </h3>
-                                    { book.author_name ? <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3> : null }
+                                    {book.author_name ?
+                                        <h3><i className="fa-solid fa-user"></i> {book?.author_name?.[0]}</h3> : null}
                                     <h4>Notes:</h4>
                                     <textarea className="textarea"></textarea>
                                     {/*<button className="btn__save">Save</button>*/}
                                 </div>
-
                                 <div className="btn__container ">
                                     <button onClick={() => moveToPresentReads(index)}><i
                                         className="fa-solid fa-arrow-turn-up"></i></button>

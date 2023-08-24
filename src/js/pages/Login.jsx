@@ -1,7 +1,6 @@
 // eslint-disable-next-line react/prop-types
 export const Login = ({name, handleNameAdd}) => {
 
-
     return (
         <div className="pages pages--login">
             <div className="page__container page__container--login">

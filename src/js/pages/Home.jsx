@@ -1,4 +1,3 @@
-
 export const Home = () => {
     return (
         <div className="pages pages__home">
