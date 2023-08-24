@@ -19,7 +19,7 @@ export const Login = ({name, handleNameAdd}) => {
         return (
             <div className="pages pages--login">
                 <div className="page__container page__container--login">
-                    {name && <h1>Cześć, {name}!</h1>}
+                    {name && <h1>Hello, {name}!</h1>}
                     {!name && <><h1>Log here</h1>
                         <form onSubmit={(e) => e.preventDefault()}>
                             <input className="form__input" type="text" placeholder="Write your name"/>

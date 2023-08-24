@@ -30,7 +30,7 @@ export const Header = ({logged, name}) => {
                             className={({ isActive }) => isActive ? 'activeStyle' : undefined}>Search&Books</NavLink>
                     </li> : null}
 
-                    {logged && <li><h3 style={{color: "#EAB2A0"}}>Cześć {name} &#x263B;!</h3></li>}
+                    {logged && <li><h3 style={{color: "#EAB2A0"}}>Hello, {name} &#x263B;!</h3></li>}
                 </ul>
             </nav>
         </header>
