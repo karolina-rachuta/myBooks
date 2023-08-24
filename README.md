@@ -39,6 +39,7 @@ https://openlibrary.org/search.json?title=${search}
 ## Acknowledgments
 - GitHub Pages
 - Font Awesome
+- Home Background Image: https://foodtank.com/news/2021/07/books-on-food-tanks-summer-reading-list/
 
 ## MIT License
 Copyright &copy; 2023 Karolina Rachuta. All rights deserved.
