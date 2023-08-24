@@ -1,5 +1,17 @@
 .pages__home {
+  background-image: url(src/assets/bookshelves.jpeg);
+  background-size: cover;
+  height: 50%;
+  font-size: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.page__container--home {
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  //background-color: rgba(0, 0, 0, 0.3);
+  //box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
