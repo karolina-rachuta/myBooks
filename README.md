@@ -26,7 +26,7 @@ Additionally, the application offers the option to write personal notes for each
 - Local Storage
 
 ## API Reference
-https://openlibrary.org/search.json?title=
+
 
 ## Acknowledgments
 - GitHub Pages
