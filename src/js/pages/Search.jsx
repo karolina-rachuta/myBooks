@@ -26,8 +26,8 @@ export const Search = () => {
         <div className="pages">
             <div className="page__container">
                 <div className="btn__positioner">
-                    <button className="switch__btn" onClick={handleVisibility}>Go to {label}
-                        <i className="fa-solid fa-circle-right"></i></button>
+                    <button className="switch__btn" onClick={handleVisibility}>Go to {label} <i
+                        className="fa-solid fa-circle-right"></i></button>
                 </div>
                 {visible ? <Search_component
                         selectedBook={selectedBook}
