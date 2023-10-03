@@ -25,7 +25,7 @@ Additionally, the application offers the option to write personal notes for each
 - REST API
 - Local Storage
 
-## API Reference
+## API Reference:
 
 ```
 https://openlibrary.org/search.json?title=${search}
@@ -36,10 +36,10 @@ https://openlibrary.org/search.json?title=${search}
 | `search`  | `string` | **Required**. Title of book to fetch |
 
 
-## Acknowledgments
+## Acknowledgments:
 - Font Awesome
 - Home Background Image: https://foodtank.com/news/2021/07/books-on-food-tanks-summer-reading-list/
 
-## MIT License
+## MIT License:
 Copyright &copy; 2023 Karolina Rachuta. All rights reserved.
 
